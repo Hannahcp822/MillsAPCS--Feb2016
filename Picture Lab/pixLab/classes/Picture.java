@@ -217,6 +217,56 @@ public class Picture extends SimplePicture
     }
   }
   
+  /** Method to keep only blue values, set red and green to 0 */
+  public void keepOnlyBlue()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+        pixelObj.setGreen(0);
+      }
+    }
+  }
+  
+  /** Method to negate all the pixels in a picture */
+  public void negate()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        int currentRed = pixelObj.getRed();
+        int currentBlue = pixelObj.getBlue();
+        int currentGreen = pixelObj.getGreen();
+        pixelObj.setRed(255 - currentRed);
+        pixelObj.setBlue(255 - currentBlue);
+        pixelObj.setGreen(255 - currentGreen);
+      }
+    }
+  }
+  
+  /** Method to negate all the pixels in a picture */
+  public void grayscale()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        int currentRed = pixelObj.getRed();
+        int currentBlue = pixelObj.getBlue();
+        int currentGreen = pixelObj.getGreen();
+        int average = (currentRed + currentBlue + currentGreen) / 3;
+        pixelObj.setRed(average);
+        pixelObj.setBlue(average);
+        pixelObj.setGreen(average);
+      }
+    }
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
