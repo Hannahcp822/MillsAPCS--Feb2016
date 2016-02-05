@@ -118,6 +118,26 @@ public class Picture extends SimplePicture
     } 
   }
   
+  /** Method that mirrors the picture around a 
+    * vertical mirror in the center of the picture
+    * from right to left */
+  public void mirrorVerticalRightToLeft()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int width = pixels[0].length;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < width / 2; col++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][width - 1 - col];
+        leftPixel.setColor(rightPixel.getColor());
+      }
+    } 
+  }
+  
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
@@ -249,7 +269,7 @@ public class Picture extends SimplePicture
     }
   }
   
-  /** Method to negate all the pixels in a picture */
+  /** Method to turn the picture into shades of gray (grayscale) */
   public void grayscale()
   {
     Pixel[][] pixels = this.getPixels2D();
@@ -264,6 +284,20 @@ public class Picture extends SimplePicture
         pixelObj.setRed(average);
         pixelObj.setBlue(average);
         pixelObj.setGreen(average);
+      }
+    }
+  }
+  
+  /** Method to enhance the image of the fish */
+  public void fixUnderwater()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        int currentRed = pixelObj.getRed();
+        pixelObj.setRed(currentRed * 3);
       }
     }
   }
