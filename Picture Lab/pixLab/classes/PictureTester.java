@@ -38,28 +38,28 @@ public class PictureTester
   /** Method to test mirrorHorizontal */
   public static void testMirrorHorizontalt()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    flower1.explore();
-    flower1.mirrorHorizontal();
-    flower1.explore();
+    Picture cumberlandIsland = new Picture("CumberlandIsland.jpg");
+    cumberlandIsland.explore();
+    cumberlandIsland.mirrorHorizontal();
+    cumberlandIsland.explore();
   }
 
   /** Method to test mirrorHorizontalBotToTop */
   public static void testMirrorHorizontalBotToTop()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    flower1.explore();
-    flower1.mirrorHorizontalBotToTop();
-    flower1.explore();
+    Picture cumberlandIsland = new Picture("CumberlandIsland.jpg");
+    cumberlandIsland.explore();
+    cumberlandIsland.mirrorHorizontalBotToTop();
+    cumberlandIsland.explore();
   }
  
   /** Method to test mirrorDiagonal */
   public static void testMirrorDiagonal()
   {
-    Picture whiteFlower = new Picture("whiteFlower.jpg");
-    whiteFlower.explore();
-    whiteFlower.mirrorHorizontalBotToTop();
-    whiteFlower.explore();
+    Picture arch = new Picture("arch.jpg");
+    arch.explore();
+    arch.mirrorDiagonal();
+    arch.explore();
   }
   
   /** Method to test mirrorTemple */
@@ -69,6 +69,24 @@ public class PictureTester
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
+  }
+  
+  /** Method to test mirrorArms */
+  public static void testMirrorArms()
+  {
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.explore();
+    snowman.mirrorArms(); 
+    snowman.explore();
+  }
+  
+  /** Method to test mirrorGull */
+  public static void testMirrorGull()
+  {
+    Picture seagull = new Picture("seagull.jpg");
+    seagull.explore();
+    seagull.mirrorGull(); 
+    seagull.explore();
   }
   
   /** Method to test the collage method */

@@ -184,16 +184,19 @@ public class Picture extends SimplePicture
   public void mirrorDiagonal()
   {
     Pixel[][] pixels = this.getPixels2D();
-    Pixel topPixel = null;
-    Pixel bottomPixel = null;
+    Pixel pixel1 = null;
+    Pixel pixel2 = null;
     int height = pixels.length;
-    for (int row = 0; row < height / 2; row++)
+    int width = pixels[0].length;
+    int squareHeight = Math.min(height, width);
+    int squareWidth = squareHeight;
+    for (int row = 0; row < squareHeight; row++)
     {
-      for (int col = 0; col < pixels[row].length; col++)
+      for (int col = 0; col <= row; col++)
       {
-        topPixel = pixels[row][col];
-        bottomPixel = pixels[height - 1 - row][col];
-        topPixel.setColor(bottomPixel.getColor());
+        pixel1 = pixels[row][col];
+        pixel2 = pixels[col][row];
+        pixel2.setColor(pixel1.getColor());
       }
     } 
   }
@@ -205,6 +208,55 @@ public class Picture extends SimplePicture
     Pixel leftPixel = null;
     Pixel rightPixel = null;
     int count = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    // loop through the rows
+    for (int row = 27; row < 97; row++)
+    {
+      // loop from 13 to just before the mirror point
+      for (int col = 13; col < mirrorPoint; col++)
+      {
+        
+        leftPixel = pixels[row][col];      
+        rightPixel = pixels[row]                       
+                         [mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
+        count++;
+      }
+    }
+    
+    System.out.print(count);
+  }
+  
+  /** Mirror the arms on the snowman to make a snowman with 4 arms */
+  public void mirrorArms()
+  {
+    int mirrorPoint = 276;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    // loop through the rows
+    for (int row = 27; row < 97; row++)
+    {
+      // loop from 13 to just before the mirror point
+      for (int col = 13; col < mirrorPoint; col++)
+      {
+        
+        leftPixel = pixels[row][col];      
+        rightPixel = pixels[row]                       
+                         [mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
+      }
+    }
+  }
+  
+  /** Mirror the seagull to the right so there are two seagulls near each other on the beach */
+  public void mirrorGull()
+  {
+    int mirrorPoint = 276;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
     Pixel[][] pixels = this.getPixels2D();
     
     // loop through the rows
