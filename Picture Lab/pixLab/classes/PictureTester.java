@@ -36,7 +36,7 @@ public class PictureTester
   }
   
   /** Method to test mirrorHorizontal */
-  public static void testMirrorHorizontalt()
+  public static void testMirrorHorizontal()
   {
     Picture cumberlandIsland = new Picture("CumberlandIsland.jpg");
     cumberlandIsland.explore();

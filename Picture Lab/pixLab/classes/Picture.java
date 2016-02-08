@@ -510,15 +510,19 @@ public class Picture extends SimplePicture
     {
       for (Pixel pixelObj : rowArray)
       {
-        int currentRed = pixelObj.getRed();
-        pixelObj.setRed(currentRed * 3);
+        if (pixelObj.getBlue() > pixelObj.getGreen())
+        {
+          pixelObj.setBlue(255);
+        } else {
+            pixelObj.setRed(pixelObj.getRed() * 3);
+        }
       }
     }
   }
   
-  /* Main method for testing - each class in Java can have a main 
-   * method 
-   */
+  /** Main method for testing - each class in Java can have a main method
+    */
+  
   public static void main(String[] args) 
   {
     Picture beach = new Picture("beach.jpg");
