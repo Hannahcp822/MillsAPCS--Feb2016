@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=name\ g\ s\ endangered\ f\ h\ c\ b\ w
+comment0.target=Hummingbird(java.lang.String,\ java.lang.String,\ java.lang.String,\ boolean,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
+comment1.params=newSpeed
+comment1.target=void\ setWingSpeed(int)
+comment2.params=
+comment2.target=java.lang.String\ getBeakType()
+numComments=3
